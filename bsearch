@@ -1,0 +1,53 @@
+import java.util.Arrays;
+
+public class test {
+	
+  //функция поиска по отсортированному массиву
+	public static int binarySearch(int ar[], int first, int last, int X){
+	      int mid = (first + last)/2;
+	      while( first <= last ){
+	         if ( (ar[mid] < X) & ((ar[mid-1]) >= X)){
+	            return mid;    
+	         }
+	         else if (ar[mid] < X){  
+	        	 last = mid - 1;
+	         }
+	         else {
+	        	 first = mid + 1;
+	        }
+	         mid = (first + last)/2;
+	      }
+	      return -1;            
+	}
+	
+	public static void main(String[] args) {
+	
+  //создание рандомного массива
+	System.out.print("\nRandom Array: \n");	
+     int ar[] = new int[20];
+      for (int i = 0; i < ar.length; i++) {
+    	  ar[i] = -(int)(Math.random()*100);
+    	  System.out.print(ar[i] + " ");
+     }
+    //сортировка и вывод массива  
+      System.out.print("\nSorted Array: \n");
+      Arrays.sort(ar);
+      for(int i = 0; i <  ar.length; i++) {
+    	  ar[i] = ar[i]*(-1);
+    		System.out.print(ar[i] + " ");
+      }
+     //заданное число (ищем номер индекса первого числа в массиве меньше этого заданного)
+      int X = 17;
+      System.out.print("\nX = " + X);
+     //вызываем функцию поиска
+      int last = ar.length-1;
+      int first = 0;
+      int index = binarySearch(ar,first,last,X);
+      if (index != -1) {
+         System.out.println("\n" + X + " more than first_index_number: " + index);
+      } else {
+          System.out.println("\nsomething wrong");
+       }
+
+	}
+}
