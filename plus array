@@ -44,15 +44,15 @@ public class test {
       }
       
      //I just choose this number)
-      int X = 17;
+      int x = 17;
       System.out.print("\nX = " + X);
      
      //call my binary search
       int last = ar.length-1;
       int first = 0;
-      int index = binarySearch(ar,first,last,X);
+      int index = binarySearch(ar,first,last,x);
       if (index != -1) {
-         System.out.println("\n" + X + " more than first_index_number: " + index);
+         System.out.println("\n" + x + " more than first_index_number: " + index);
       } else {
           System.out.println("\nsomething wrong");
        }
