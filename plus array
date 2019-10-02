@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class test {
+public class Test {
 
 	public static int binarySearch(int ar[], int first, int last, int X){
 	      int mid = (first + last)/2;
